@@ -1,146 +1,21 @@
-body {
-  background-color: rgb(166, 231, 210);
-}
-
-.title {
-  text-align: center;
-}
-
 .container {
-  display: flex;
-  justify-content: center;
+    width: 330px;
+    background-color: aqua;
+    margin: auto;
+    text-align: center;   
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 10px 20px 30px;
+    text-transform: uppercase;
+}
+
+.containerButtons {
+    display: flex;
+    justify-content: center;
 }
 
 button {
-  width: 20%;
-  height: 10%;
-  font-size: large;
-  margin-right: 20px;
+    margin: auto;
+    padding: 2% 9%;
 }
-
-.bigContainer {
-  height: 100vh;
-}
-
-.modal {
-  top: 50%;
-  left: 50%;
-  width: 30em;
-  height: 18em;
-  margin-top: -17em;
-  margin-left: -15em;
-  border: 1px solid #666;
-  background-color: #d6edd1;
-  position: fixed;
-  top: 100;
-  right: 100;
-}
-
-.errorModal {  
-  width: 30em;
-  height: 8em;
-}
-
-.errorModal button:last-child{
-  text-align: center;
-  width: 8%;
-}
-
-.errorModal div:last-child{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.errorModal,
-.addSectionModal,
-.addTaskModal {
-  display: none;
-}
-
-.close {
-  text-align: center;
-  width: 5%;
-  margin-top: 8px;
-  margin-right: -5px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-50%, 0);
-}
-
-.closeErrorModal {
-  height: 23px;
-}
-
-.addSection {
-  text-align: center;
-}
-
-.containerNameColor {
-}
-
-.properties {
-  margin-left: 30px;
-  margin-right: 98px;
-}
-
-.description {
-  margin-left: 30px;
-  margin-right: 54px;
-}
-
-input {
-  margin-bottom: 20px;
-}
-
-.errorModal h1{
-text-align: center;
-}
-
-
-
-.buttonsContainer {
-  text-align: center;
-  margin-top: 50px;
-}
-
-
-
-.sectionClass {
-  padding: 5px;
-  width: 45vw;
-  min-height: 19vh;
-}
-
-.sectionTitle {
-  margin-bottom: 10px;
-  background-color: #d6edd1;
-}
-
-.sectionsAdded {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: start;
-  gap: 20px 20px;
-}
-
-.task{
-  border: solid black 5px;
-  margin: 5px 3px;
-  background-color: darkgray;
-}
-
-.task h1{
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.task p{
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-

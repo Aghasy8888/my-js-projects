@@ -1,92 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trello Board</title>
-    <script src="index.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="bigContainer">
-      <h2 class="title">Trello Board</h2>
-      <div class="container">
-        <button class="addSection">Add Section</button>
-        <button class="addTask">Add Task</button>
-        <div class="modal addSectionModal">
-          <h1 class="addSection">Add Section</h1>
-          <button class="close closeSectionModal">
-            <span>&times;</span>
-          </button>
-
-          <section class="containerNameColor">
-            <div>
-              <span class="properties">Name</span>
-              <input
-                type="text"
-                class="sectionName"
-                placeholder="Enter The Name"
-              />
-            </div>
-
-            <div>
-              <span class="properties">Color</span>
-              <input type="color" class="sectionColor" />
-            </div>
-
-            <div class="buttonsContainer">
-              <button class="addSec">Add</button>
-              <button class="cancel cancelSectionButton">Cancel</button>
-            </div>
-          </section>
-        </div>
-
-        <div class="modal addTaskModal">
-          <h1 class="addSection">Add Task</h1>
-          <button class="close closeTaskModal">
-            <span>&times;</span>
-          </button>
-
-          <section class="containerNameColor">
-            <div>
-              <span class="properties">Title</span>
-              <input class="taskTitle" type="text" placeholder="Enter The Title" />
-            </div>
-
-            <div>
-              <!-- <span class="properties">Description</span> -->
-              <label class="description" for="my-textarea">Description</label>
-              <textarea
-                class="taskDescription"
-                id="my-textarea"
-                name="message"
-                rows="4"
-                cols="33"
-                placeholder="Enter The Description"
-              ></textarea>
-            </div>
-
-            <div class="buttonsContainer">
-              <button class="addSingleTask">Add</button>
-              <button class="cancel cancelTaskButton">Cancel</button>
-            </div>
-          </section>
-        </div>
-
-        <div class="errorModal modal">
-          <h1>Please, add a section first.</h1>
-           <button class="close closeErrorModal">
-            <span>&times;</span>
-          </button>
-          <div>
-            <button>Ok</button>
-          </div>
-        </div>
-
-      </div>
-
-      <section class="sectionsAdded"></section>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwacth</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container">
+    <h3>Stopwacth</h3>  
+    <h3>Vanilla Javascript Stopwacth</h3> 
+    <h4 class="time"></h4>  
+    <div class="containerButtons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
     </div>
-  </body>
+    </div>
+</body>
 </html>
