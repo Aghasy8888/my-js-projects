@@ -7,13 +7,13 @@
   const equal = document.querySelector(".btn-equal");
   const point = document.querySelector(".point");
   const squareRoot = document.querySelector(".square-root");
-  const allButtons = document.querySelectorAll(".all");
   screen.value = "0";
   let willBeEmptyStr = "."; //after pressing an action
   let sqrtClickedFirstTime = true;
   let executeSqrt = false;
   const actionsString = "+-*/√%";
   const numbersString = "0123456789";
+  let actionClickedFirstTime = true;
 
   function squareRootTheStr(str) {
     let result = Math.sqrt(
@@ -28,6 +28,8 @@
   squareRoot.addEventListener("click", (e) => {
     equal.disabled = false;
     clickedFirstTime = true;
+    const lastItem = screen.value[screen.value.length - 1];
+
     if (sqrtClickedFirstTime) {
       let value = e.target.dataset.num;
       if (screen.value === "0") {
@@ -35,8 +37,8 @@
       } else if (
         numbersString.includes(screen.value[screen.value.length - 1])
       ) {
-         screen.value += '*' + value;
-      } else {
+        screen.value += "*" + value;
+      } else if (lastItem !== "√") {
         screen.value += value;
       }
     }
@@ -56,12 +58,18 @@
       sqrtClickedFirstTime = true;
       executeSqrt = false;
       let value = e.target.dataset.num;
-      screen.value += value;
+      const lastItem = screen.value[screen.value.length - 1];
+      if (actionClickedFirstTime && lastItem !== "√") {
+        screen.value += value;
+        actionClickedFirstTime = false;
+      } else if (lastItem === "√") {
+        screen.value += "";
+      } else {
+        screen.value =
+          screen.value.substring(0, screen.value.length - 1) + value;
+      }
 
-      // if (actionsString.includes(screen.value[screen.value.length - 1])) {
-      //   screen.value = screen.value.substring(0, screen.value.length - 1);
-      // }
-      if (screen.value.includes("√")) {
+      if (screen.value.includes("√") && lastItem !== "√") {
         screen.value = squareRootTheStr(screen.value) + value;
       }
 
@@ -71,6 +79,7 @@
 
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
+      actionClickedFirstTime = true;
       let value = e.target.dataset.num;
       if (screen.value.includes("√")) executeSqrt = true;
       sqrtClickedFirstTime = true;
@@ -95,12 +104,16 @@
     } else if (clickedFirstTime) {
       screen.value += value;
     }
-
+    actionClickedFirstTime = true;
     clickedFirstTime = false;
   });
 
   equal.addEventListener("click", (e) => {
-    screen.value = squareRootTheStr(screen.value);
+    const lastItem = screen.value[screen.value.length - 1];
+    if (lastItem !== "√") {
+      screen.value = squareRootTheStr(screen.value);
+    } else return;
+
     if (screen.value === "") {
       screen.value = "Please Enter";
     } else {
@@ -120,6 +133,7 @@
     }
     executeSqrt = false;
     sqrtClickedFirstTime = true;
+    actionClickedFirstTime = true;
     willBeEmptyStr = ".";
   });
 
@@ -128,6 +142,7 @@
     clickedFirstTime = true;
     sqrtClickedFirstTime = true;
     executeSqrt = false;
+    actionClickedFirstTime = true;
   });
 
   deleteSingle.addEventListener("click", (e) => {
@@ -135,6 +150,7 @@
       clickedFirstTime = true;
     } else if (actionsString.includes(screen.value[screen.value.length - 1])) {
       willBeEmptyStr = ".";
+      actionClickedFirstTime = true;
     }
     if (screen.value[screen.value.length - 1] === "√") {
       sqrtClickedFirstTime = true;
