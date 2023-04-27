@@ -23,6 +23,8 @@ const taskDescriptionInput = document.querySelector(".taskDescription");
 const addSingleTaskButton = document.querySelector(".addSingleTask");
 const tasks = [];
 const sections = [];
+const sectionsFromStorage = [];
+// const sectionsFromStorage = localStorage.getItem(JSON.parse(sections));
 
 let index = 1;
 let color = "";
@@ -34,6 +36,16 @@ let taskModalIsOpen = false;
 let taskExists = false;
 let isFirstSection = true;
 let draggingTask;
+
+function gettingSectionsFromStorage() {
+  sectionsFromStorage.forEach((section) => {
+    const newSection = document.createElement("div");
+    newSection.classList = `${section.classList}`;
+    sectionsAdded.appendChild();
+  });
+}
+
+gettingSectionsFromStorage();
 
 function createTask() {
   const task = document.createElement("div");
@@ -93,11 +105,11 @@ const handleAddSec = () => {
   taskExists = true;
   const newSection = document.createElement("div");
   newSection.className = `sectionClass ${sectionName.value}`;
-
+  let classListStr = `sectionClass ${sectionName.value}`;
   if (isFirstSection) newSection.className = "sectionClass firstSection";
   newSection.style.backgroundColor = sectionColor.value;
   newSection.innerHTML = `<span class='sectionTitle'>${sectionName.value}</span>`;
-
+  console.log(sectionName.value);
   index++;
 
   sectionsAdded.appendChild(newSection);
@@ -116,6 +128,17 @@ const handleAddSec = () => {
       draggingTask.classList.add(`${section.classList.item(1)}`);
     });
   });
+
+  sectionsFromStorage.push({
+    classList: classListStr,
+    sectionColor: sectionColor.value,
+    sectionName: sectionName.value,
+  });
+  let sectionsFromStorageStringified = sectionsFromStorage.map((section) => {
+    return JSON.stringify(section);
+  });
+
+  localStorage.setItem("sections", sectionsFromStorageStringified);
   closeModal(addSectionModal);
 };
 
