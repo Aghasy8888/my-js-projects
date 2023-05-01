@@ -36,17 +36,17 @@ button {
   right: 100;
 }
 
-.errorModal {  
+.errorModal {
   width: 30em;
   height: 8em;
 }
 
-.errorModal button:last-child{
+.errorModal button:last-child {
   text-align: center;
   width: 8%;
 }
 
-.errorModal div:last-child{
+.errorModal div:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,18 @@ button {
   text-align: center;
 }
 
-.containerNameColor {
+.SecNameError {
+  margin-left: 170px;
+  margin-bottom: 20px;
+}
+
+.taskNameError {
+  height: 20px;
+  margin: 5px 162px;
+}
+
+.taskDescriptionError {
+  margin: 5px 163px;
 }
 
 .properties {
@@ -91,21 +102,22 @@ button {
 }
 
 input {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
-.errorModal h1{
-text-align: center;
+.errorModal h1 {
+  text-align: center;
 }
-
-
 
 .buttonsContainer {
   text-align: center;
   margin-top: 50px;
 }
 
-
+.taskButtonsContainer {
+  text-align: center;
+  margin-top: 17px;
+}
 
 .sectionClass {
   padding: 5px;
@@ -127,20 +139,18 @@ text-align: center;
   gap: 20px 20px;
 }
 
-.task{
+.task {
   border: solid black 5px;
   margin: 5px 3px;
   background-color: darkgray;
 }
 
-.task h1{
+.task h1 {
   text-align: center;
   margin-bottom: 10px;
 }
 
-.task p{
+.task p {
   text-align: center;
   margin-bottom: 10px;
 }
-
-

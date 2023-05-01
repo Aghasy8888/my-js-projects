@@ -29,7 +29,7 @@
                 placeholder="Enter The Name"
               />
             </div>
-
+            <div class="SecNameError"></div>
             <div>
               <span class="properties">Color</span>
               <input type="color" class="sectionColor" />
@@ -51,11 +51,16 @@
           <section class="containerNameColor">
             <div>
               <span class="properties">Title</span>
-              <input class="taskTitle" type="text" placeholder="Enter The Title" />
+              <input
+                class="taskTitle"
+                type="text"
+                placeholder="Enter The Title"
+              />
             </div>
 
+            <div class="taskNameError"></div>
+
             <div>
-              <!-- <span class="properties">Description</span> -->
               <label class="description" for="my-textarea">Description</label>
               <textarea
                 class="taskDescription"
@@ -66,8 +71,9 @@
                 placeholder="Enter The Description"
               ></textarea>
             </div>
+            <div class="taskDescriptionError"></div>
 
-            <div class="buttonsContainer">
+            <div class="taskButtonsContainer">
               <button class="addSingleTask">Add</button>
               <button class="cancel cancelTaskButton">Cancel</button>
             </div>
@@ -76,14 +82,13 @@
 
         <div class="errorModal modal">
           <h1>Please, add a section first.</h1>
-           <button class="close closeErrorModal">
+          <button class="close closeErrorModal">
             <span>&times;</span>
           </button>
           <div>
             <button>Ok</button>
           </div>
         </div>
-
       </div>
 
       <section class="sectionsAdded"></section>
